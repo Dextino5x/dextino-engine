@@ -36,9 +36,9 @@ const upload = multer({
   }
 });
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
 
 function run(command, args) {
   return new Promise((resolve, reject) => {
