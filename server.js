@@ -142,8 +142,20 @@ app.post("/api/analyze", upload.single("video"), async (req, res) => {
       .sort();
 
     if (!frames.length) {
-      if (!openai) {
+  throw new Error("Could not extract video frames.");
+}
+
+if (!openai) {
   return res.json({
+    success: true,
+    mode: "free-development",
+    software,
+    platform,
+    duration,
+    framesAnalysed: frames.length,
+    message: "Video processed successfully. AI analysis is not enabled yet."
+  });
+}
     success: true,
     mode: "free-development",
     software,
