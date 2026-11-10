@@ -287,9 +287,47 @@ button {
   transition:.2s;
 }
 
+.tool-card {
+  cursor:pointer;
+  overflow:hidden;
+  transition:.2s;
+  padding:0;
+}
+
 .tool-card:hover {
   border-color:var(--purple);
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+}
+
+.tool-preview {
+  height:135px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#211538,#101827);
+}
+
+.tool-preview svg {
+  width:100%;
+  height:100%;
+}
+
+.tool-details {
+  padding:15px;
+}
+
+.tool-symbol {
+  font-size:23px;
+  margin-bottom:9px;
+}
+
+.tool-open {
+  margin-top:12px;
+  color:#b99aff;
+  font-size:12px;
+  font-weight:bold;
 }
 
 .modal {
