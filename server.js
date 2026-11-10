@@ -157,8 +157,7 @@ if (!openai) {
   });
 }
     
-      throw new Error("Could not extract video frames.");
-    }
+      
 
     const content = [{
       type: "input_text",
