@@ -99,11 +99,7 @@ app.post("/api/analyze", upload.single("video"), async (req, res) => {
   let folder;
 
   try {
-    if (!process.env.OPENAI_API_KEY) {
-      return res.status(503).json({
-        error: "AI service is not configured."
-      });
-    }
+    
 
     if (!req.file) {
       return res.status(400).json({
